@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AppFlowDoc>
+    <ApplicationFlow nextObjectId="12" package="flow" version="5.0">
+        <FlowGraph>
+            <FlowNode class="com.avaya.sce.callflow.internal.appflow.AppRoot" id="1" version="3.1">
+                <Property name="Name" value="AppRoot"/>
+                <FlowItem class="com.avaya.sce.callflow.internal.flowitem.AppRoot" id="2" version="1.2">
+                    <ItemProperties>
+                        <Property name="StartNodeID" value="4"/>
+                    </ItemProperties>
+                    <ChildItems>
+                        <FlowItem class="com.avaya.sce.callflow.internal.flowitem.InputParameter" id="3" version="1.2">
+                            <ItemProperties>
+                                <Property name="Name" value="testInput1"/>
+                            </ItemProperties>
+                            <ChildItems/>
+                        </FlowItem>
+                    </ChildItems>
+                </FlowItem>
+            </FlowNode>
+            <FlowNode class="com.avaya.sce.callflow.internal.appflow.Data" id="4" version="3.1">
+                <Property name="Name" value="updateTestInput"/>
+                <Property name="FlowNodeEditPart.WidgetY" value="54"/>
+                <Property name="FlowNodeEditPart.WidgetX" value="181"/>
+                <FlowItem class="com.avaya.sce.callflow.internal.flowitem.Data" id="5" version="1.2">
+                    <ItemProperties/>
+                    <ChildItems>
+                        <FlowItem class="com.avaya.sce.callflow.internal.flowitem.LocalVariables" id="6" version="1.2">
+                            <ItemProperties>
+                                <Property name="Name" value="LocalVariables"/>
+                            </ItemProperties>
+                            <ChildItems/>
+                        </FlowItem>
+                        <FlowItem class="com.avaya.sce.callflow.internal.flowitem.Next" id="7" version="1.2">
+                            <ItemProperties>
+                                <Property name="Name" value="Default"/>
+                                <Property name="LinkedNodeID" value="9"/>
+                            </ItemProperties>
+                            <ChildItems/>
+                        </FlowItem>
+                    </ChildItems>
+                </FlowItem>
+            </FlowNode>
+            <FlowNode class="com.avaya.sce.callflow.internal.appflow.Return" id="9" version="3.1">
+                <Property name="Name" value="backToCallingModule"/>
+                <Property name="FlowNodeEditPart.WidgetY" value="111"/>
+                <Property name="FlowNodeEditPart.WidgetX" value="380"/>
+                <FlowItem class="com.avaya.sce.callflow.internal.flowitem.Return" id="11" version="1.2">
+                    <ItemProperties/>
+                    <ChildItems>
+                        <FlowItem class="com.avaya.sce.callflow.internal.flowitem.OutputParameter" id="12" version="1.2">
+                            <ItemProperties>
+                                <Property name="Name" value="testOutput"/>
+                                <Property name="OutputVariableID" value="testInput1"/>
+                            </ItemProperties>
+                            <ChildItems/>
+                        </FlowItem>
+                    </ChildItems>
+                </FlowItem>
+            </FlowNode>
+            <NodeConnection id="8" version="1.2">
+                <SourceNode id="1"/>
+                <TargetNode id="4"/>
+                <Property name="Connection.SourceObjectID" value="2"/>
+                <Property name="Connection.TargetObjectID" value="4"/>
+            </NodeConnection>
+            <NodeConnection id="10" version="1.2">
+                <SourceNode id="4"/>
+                <TargetNode id="9"/>
+                <Property name="Connection.SourceObjectID" value="7"/>
+                <Property name="Connection.TargetObjectID" value="9"/>
+            </NodeConnection>
+        </FlowGraph>
+        <ProjectEventTypes/>
+    </ApplicationFlow>
+</AppFlowDoc>
